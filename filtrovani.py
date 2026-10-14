@@ -7,7 +7,9 @@ with open("postavy.txt", "r", encoding="utf-8") as soubor:
 
             casti = radek.split("#")
             if len(casti) != 6:
-                vystup.write("neplatný formát\n")
+                text = "neplatný formát\n"
+                vystup.write(text)
+                print(text, end="")
                 continue
 
             jmeno = casti[0]
@@ -17,15 +19,20 @@ with open("postavy.txt", "r", encoding="utf-8") as soubor:
             poslednipromitani = casti[4]
             oblibenost = float(casti[5])
 
-            if jezvire == "ano":
+            jeto_zvire = jezvire == "ano"
+            if jeto_zvire:
                 zvire = "je"
             else:
                 zvire = "není"
 
             if oblibenost > 2.5:
-                vystup.write(f"{druh_pohlavi} jménem: {jmeno}\n")
-                vystup.write(f"{zvire} zvíře\n")
-                vystup.write(f"film v němž existuje byl naposledy vysílán v našem kině: {poslednipromitani}\n")
-                vystup.write(f"oblíbenost: {oblibenost}\n\n")
+                text = (
+                    f"{druh_pohlavi} jménem: {jmeno}\n"
+                    f"{zvire} zvíře\n"
+                    f"film v němž existuje byl naposledy vysílán v našem kině: {poslednipromitani}\n"
+                    f"oblíbenost: {oblibenost}\n\n"
+                )
+                vystup.write(text)
+                print(text, end="")
 
     
