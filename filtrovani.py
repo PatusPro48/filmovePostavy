@@ -26,13 +26,9 @@ with open("postavy.txt", "r", encoding="utf-8") as soubor:
                 zvire = "není"
 
             if oblibenost > 2.5:
-                text = (
-                    f"{druh_pohlavi} jménem: {jmeno}\n"
-                    f"{zvire} zvíře\n"
-                    f"film v němž existuje byl naposledy vysílán v našem kině: {poslednipromitani}\n"
-                    f"oblíbenost: {oblibenost}\n\n"
-                )
-                vystup.write(text)
-                print(text, end="")
+                print(f"{druh_pohlavi} jménem: {jmeno}")
+                print(f"{zvire} zvíře")
+                print(f"film v němž existuje byl naposledy vysílán v našem kině: {poslednipromitani}")
+                print(f"oblíbenost: {oblibenost}\n\n")
 
-    
+                vystup.write(f"{jmeno}\t {vek}\t {druh_pohlavi}\t {zvire} zvíře\t {poslednipromitani}\t {oblibenost}\n")
